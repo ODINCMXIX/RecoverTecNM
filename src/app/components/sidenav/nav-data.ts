@@ -1,10 +1,25 @@
-import { RouterLink } from "@angular/router";
-import { routes } from "../../app.routes";
 
 export const navbarData= [
   {
-    RouterLink: 'dashboard',
+    RouterLink: 'inicio',
     icon: 'fal fa-home',
-    label: 'Dashboard'
-  }
+    label: 'Inicio'
+  },
+  {
+    RouterLink: 'crear-reporte',
+    icon: 'fal fa-home',
+    label: 'Crear-Reporte'
+  },
+  {
+    RouterLink: 'historial',
+    icon: 'fal fa-home',
+    label: 'Hisotial'
+  },
+  {
+    RouterLink: 'cerrar-sesion',
+    icon: 'fal fa-home',
+    label: 'Cerrar-Sesion'
+  },
 ];
+
+
