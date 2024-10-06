@@ -1,25 +1,22 @@
-
-export const navbarData= [
+export const navbarData = [
   {
-    RouterLink: 'inicio',
+    routeLink: 'inicio',  // Cambiado de 'RouterLink' a 'routeLink'
     icon: 'fal fa-home',
-    label: 'Inicio'
+    label: 'inicio'
   },
   {
-    RouterLink: 'crear-reporte',
-    icon: 'fal fa-home',
-    label: 'Crear-Reporte'
+    routeLink: 'crear-reporte',
+    icon: 'fal fa-open',
+    label: 'crear Reporte'
   },
   {
-    RouterLink: 'historial',
-    icon: 'fal fa-home',
-    label: 'Hisotial'
+    routeLink: 'historial',
+    icon: 'fal fa-char-bar',
+    label: 'historial'
   },
   {
-    RouterLink: 'cerrar-sesion',
-    icon: 'fal fa-home',
-    label: 'Cerrar-Sesion'
+    routeLink: 'cerrar-sesion',
+    icon: 'fal fa-tags',
+    label: 'cerrar Sesión'
   },
 ];
-
-

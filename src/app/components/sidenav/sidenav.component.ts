@@ -48,10 +48,7 @@ export class SidenavComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   // Definición de navData
-  navData = [
-    { routeLink: '/inicio', icon: 'fa-inicio', label: 'Inicio' },
-    { routeLink: '/about', icon: 'fa-info', label: 'About' }
-  ];  
+  navData = navbarData;
 
     @HostListener('window:resize',['$event'])
     onResize(event: any){
@@ -63,7 +60,9 @@ export class SidenavComponent implements OnInit {
     }
 
     ngOnInit(): void{
-      this.screenWidth = window.innerWidth;
+      if(typeof window !== 'undefined'){
+        this.screenWidth = window.innerWidth;
+      }
     }
   toggleCollapse(): void{
     this.collapsed = !this.collapsed;
