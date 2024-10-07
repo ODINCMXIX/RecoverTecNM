@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from "./components/login/login.component";
 import { SidenavComponent } from './components/sidenav/sidenav.component';  // Importa el componente
 import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
