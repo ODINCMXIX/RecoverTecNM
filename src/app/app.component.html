@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 <router-outlet></router-outlet>
+=======
+<app-header></app-header>
+<div class="container">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav> <!-- Incluye el Sidenav -->
+    <app-body
+        [collapsed]="isSideNavCollapsed"
+        [screenWidth]="screenWidth"
+    ></app-body>
+</div>
+>>>>>>> odin

@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SidenavComponent } from './sidenav.component';
 
-describe('SidenavComponent', () => {
-  let component: SidenavComponent;
-  let fixture: ComponentFixture<SidenavComponent>;
+import { Formato3Component } from './formato3.component';
+
+describe('Formato3Component', () => {
+  let component: Formato3Component;
+  let fixture: ComponentFixture<Formato3Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidenavComponent]
+      imports: [Formato3Component]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidenavComponent);
+    fixture = TestBed.createComponent(Formato3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
