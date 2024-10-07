@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';  // Importa las rutas
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -11,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)  // Configura el RouterModule con las rutas
   ],
-  providers: [],
-  
+  providers: [
+    
+  ],
 })
 export class AppModule { }

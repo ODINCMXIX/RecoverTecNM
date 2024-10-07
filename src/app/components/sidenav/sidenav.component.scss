@@ -1,12 +1,10 @@
 .sidenav {
-    background: #290883;
+    background: #1b396a;
     transition: all .5s ease;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    //ancho del menu desplegado
-   
-    height: 100vh;
+    z-index: 2;
+    top: 90px;
+    height: calc(100vh - 0px);
     box-shadow: 0.063rem 0 1.25rem 0 #8690;
 
     .logo-container{
@@ -51,7 +49,7 @@
 }
 
 .sidenav-collapsed {
-    width: 16.5625rem;
+    width: 18.5625rem;
 }
 
 .sidenav-nav{
@@ -72,7 +70,7 @@
             display: flex;
             align-items: center;
             height: 3rem;
-            color: #f3f3f3;
+            color: #fff;
             text-decoration: none;
             border-radius: 0.62rem;
             transition: all .3s ease;

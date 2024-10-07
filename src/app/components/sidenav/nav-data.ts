@@ -1,22 +1,22 @@
 export const navbarData = [
   {
-    routeLink: 'inicio',  // Cambiado de 'RouterLink' a 'routeLink'
-    icon: 'fal fa-home',
-    label: 'inicio'
+    routeLink: 'inicio', 
+    icon: 'fa-solid fa-house fa-2x',
+    label: 'Inicio'
   },
   {
     routeLink: 'crear-reporte',
-    icon: 'fal fa-open',
-    label: 'crear Reporte'
+    icon: 'fa-solid fa-file-pen fa-2x',
+    label: 'Crear Reporte'
   },
   {
     routeLink: 'historial',
-    icon: 'fal fa-char-bar',
-    label: 'historial'
+    icon: 'fa-solid fa-clipboard fa-2x',
+    label: 'Historial'
   },
   {
     routeLink: 'cerrar-sesion',
-    icon: 'fal fa-tags',
-    label: 'cerrar Sesión'
+    icon: 'fa-solid fa-door-closed fa-2x',
+    label: 'Cerrar Sesion'
   },
 ];
