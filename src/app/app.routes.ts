@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   { path: '', component: BodyComponent },  // Ruta principal que carga BodyComponent
@@ -15,5 +16,7 @@ export const routes: Routes = [
   { path: 'header', component: HeaderComponent },  // Ruta para HeaderComponent
   { path: 'historial', component: HistorialComponent },  // Ruta para HistorialComponent
   { path: 'sidenav', component: SidenavComponent },  // Ruta para SidenavComponent
-  { path: '**', redirectTo: '' }  // Ruta de fallback para redirigir a la principal
+  { path: '**', redirectTo: '' },  // Ruta de fallback para redirigir a la principal
+  { path: 'login', component: LoginComponent }
 ];
+
