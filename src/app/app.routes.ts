@@ -6,10 +6,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { Inicio2Component } from './components/inicio2/inicio2.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },  // Redirige a 'inicio'
   { path: 'inicio', component: InicioComponent },  // Ruta para 'Inicio'
+  { path: 'inicio2', component: Inicio2Component},  // Ruta para 'Inicio2'
   { path: 'body2', component: Body2Component },  // Ruta para Body2Component
   { path: 'crear-reporte', component: CrearReporteComponent },  // Ruta para CrearReporteComponent
   { path: 'footer', component: FooterComponent },  // Ruta para FooterComponent
