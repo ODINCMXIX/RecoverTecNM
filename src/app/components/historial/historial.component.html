@@ -1,1 +1,23 @@
-<p>historial works!</p>
+<div class="historial-container">
+    <h2>Historial de Reportes</h2>
+  
+    <!-- Listado por meses -->
+    <div *ngFor="let mes of historialPorMes">
+      <h3>{{ mes.nombreMes }}</h3>
+  
+      <div class="reporte-item" *ngFor="let reporte of mes.reportes">
+        <div class="reporte-info">
+            <i class="fa-solid fa-file-pdf"></i>
+          <span class="reporte-nombre">{{ reporte.nombre }}</span>
+          <span class="reporte-usuario">{{ reporte.usuario }}</span>
+        </div>
+  
+        <div class="reporte-acciones">
+          <button class="btn-editar">Editar</button>
+          <button class="btn-eliminar">Eliminar</button>
+          <span class="reporte-fecha">{{ reporte.fecha }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

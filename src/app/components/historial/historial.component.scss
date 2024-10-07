@@ -1,0 +1,80 @@
+.historial-container {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  
+    h2 {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #333;
+    }
+  
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      color: #555;
+    }
+  
+    .reporte-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+    }
+  
+    .reporte-info {
+      display: flex;
+      align-items: center;
+  
+      i {
+        font-size: 3rem;
+        color: #e74c3c;
+        margin-right: 1rem;
+      }
+  
+      .reporte-nombre {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-right: 1rem;
+      }
+  
+      .reporte-usuario {
+        font-size: 1rem;
+        color: #777;
+      }
+    }
+  
+    .reporte-acciones {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  
+      .btn-editar, .btn-eliminar {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .btn-editar {
+        background-color: #3498db;
+        color: #fff;
+      }
+  
+      .btn-eliminar {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+  
+      .reporte-fecha {
+        font-size: 0.9rem;
+        color: #777;
+      }
+    }
+  }
+  

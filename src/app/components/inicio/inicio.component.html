@@ -1,1 +1,23 @@
-<p>inicio works!</p>
+<div class="recent-container">
+    <h2>Elementos Recientes</h2>
+    <div *ngIf="recentReports.length > 0; else noReports">
+      <div class="report-item" *ngFor="let report of recentReports">
+        <div class="report-details">
+          <i class="fas fa-file-pdf"></i>
+          <span>{{ report.name }}</span>
+          <span>{{ report.user }}</span>
+        </div>
+        <div class="report-actions">
+          <button (click)="editReport(report)">Editar</button>
+          <button (click)="deleteReport(report)">Eliminar</button>
+          <div class="report-date">{{ report.date }}</div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noReports>
+      <div class="no-reports" (click)="redirectToCreateReport()">
+        Crear Reporte
+      </div>
+    </ng-template>
+  </div>
+  
