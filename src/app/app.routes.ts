@@ -7,6 +7,7 @@ import { HistorialComponent } from './components/historial/historial.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { Inicio2Component } from './components/inicio2/inicio2.component';
+import { CarrerasComponent } from './components/carreras/carreras.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },  // Redirige a 'inicio'
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'inicio2', component: Inicio2Component},  // Ruta para 'Inicio2'
   { path: 'body2', component: Body2Component },  // Ruta para Body2Component
   { path: 'crear-reporte', component: CrearReporteComponent },  // Ruta para CrearReporteComponent
+  { path: 'carreras', component: CarrerasComponent },  // Ruta para Carreras
   { path: 'footer', component: FooterComponent },  // Ruta para FooterComponent
   { path: 'header', component: HeaderComponent },  // Ruta para HeaderComponent
   { path: 'historial', component: HistorialComponent },  // Ruta para HistorialComponent
