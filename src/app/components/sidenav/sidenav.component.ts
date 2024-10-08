@@ -1,75 +1,53 @@
 import { Component, Output, EventEmitter, HostListener, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Importa CommonModule para ngClass
-import { RouterModule } from '@angular/router';  // Importa RouterModule para routerLink
-import { navbarData } from './nav-data';
-import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-
-
-interface SideNavToggle{
-  screenWidth: number;
-  collapsed: boolean;
-}
+import { CommonModule } from '@angular/common';  
+import { RouterModule } from '@angular/router';  
+import { docenteNavData, coordinadorNavData } from './nav-data'; // Importa los datos del menú
+import { AuthService } from '../../services/auth.service'; // Importa el servicio de autenticación
 
 @Component({
   selector: 'app-sidenav',
-  standalone: true,  // Define que el componente es independiente
-  imports: [CommonModule, RouterModule],  // Importa los módulos necesarios
+  standalone: true,  
+  imports: [CommonModule, RouterModule],  
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
-  animations:[
-    trigger('fadeOut',[
-      transition(':enter',[
-        style({opacity: 0}),
-        animate('350ms',
-          style({opacity: 1})
-        )
-      ]),
-      transition(':leave',[
-        style({opacity: 1}),
-        animate('350ms',
-          style({opacity: 0})
-        )
-      ])
-    ]),
-    trigger('rotate',[
-      transition(':enter',[
-        animate('100ms',
-          keyframes([
-            style({transform: 'rotate(0deg)',offset: '0'}),
-            style({transform: 'rotate(2turn)',offset: '1'})
-          ])
-        )
-      ])
-    ])
-  ]
 })
 export class SidenavComponent implements OnInit {
-  @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
+  @Output() onToggleSideNav: EventEmitter<any> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  // Definición de navData
-  navData = navbarData;
+  navData: any[] = []; // Variable para almacenar el conjunto de datos del menú
 
-    @HostListener('window:resize',['$event'])
-    onResize(event: any){
-      this.screenWidth = window.innerWidth;
-      if(this.screenWidth <= 768){
-        this.collapsed= false;
-        this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
-      }
-    }
+  constructor(private authService: AuthService) {}
 
-    ngOnInit(): void{
-      if(typeof window !== 'undefined'){
-        this.screenWidth = window.innerWidth;
-      }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 768) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
     }
-  toggleCollapse(): void{
-    this.collapsed = !this.collapsed;
-    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
-  closeSidenav(): void{
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.screenWidth = window.innerWidth;
+    }
+    // Verifica el rol del usuario y carga el menú correspondiente
+    const role = this.authService.getUserRole();
+    if (role === 'docente') {
+      this.navData = docenteNavData;
+    } else if (role === 'coordinador' || role === 'subdirector') {
+      this.navData = coordinadorNavData;
+    }
+  }
+
+  toggleCollapse(): void {
+    this.collapsed = !this.collapsed;
+    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+  }
+
+  closeSidenav(): void {
     this.collapsed = false;
-    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
 }
