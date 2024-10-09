@@ -1,9 +1,8 @@
-<div class="card-container">
-    <div class="card" *ngFor="let card of cards">
-      <h3>{{ card.title }}</h3>
-      <button class="card-button">
-        <img [src]="card.image" alt="{{ card.title }}" />
-      </button>
-    </div>
+<div class="card-container"> 
+  <div class="card" *ngFor="let card of cards">
+    <h3>{{ card.title }}</h3>
+    <button class="card-button" (click)="navigate(card.route)">
+      <img [src]="card.image" alt="{{ card.title }}" />
+    </button>
   </div>
-  
+</div>
