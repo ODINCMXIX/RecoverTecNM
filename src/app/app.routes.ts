@@ -13,6 +13,9 @@ import { Inicio2Component } from './components/inicio2/inicio2.component';
 import { CarrerasComponent } from './components/carreras/carreras.component';
 import { LoginComponent } from './login/login.component';
 
+import { Formato1Component } from './components/crear-reporte/formato1/formato1.component';
+import { Formato2Component } from './components/crear-reporte/formato2/formato2.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },  // Redirige a 'inicio'
   { path: 'login', component: LoginComponent },  // Ruta para HeaderComponent
@@ -23,7 +26,9 @@ export const routes: Routes = [
   { path: 'footer', component: FooterComponent },  // Ruta para FooterComponent
 
   { path: 'inicio', component: InicioComponent},  // Ruta para 'Inicio'
-  { path: 'crear-reporte', component: CrearReporteComponent },  // Ruta para CrearReporteComponent  
+  { path: 'crear-reporte', component: CrearReporteComponent },  // Ruta para CrearReporteComponent
+  { path: 'formato1', component: Formato1Component },  // Ruta para Formato 1
+  { path: 'formato2', component: Formato2Component },  // Ruta para Formato 2
   { path: 'historial', component: HistorialComponent},  // Ruta para HistorialComponent  
   { path: 'inicio2', component: Inicio2Component },  // Ruta para 'Inicio2'
   { path: 'carreras', component: CarrerasComponent },  // Ruta para Carreras
